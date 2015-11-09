@@ -15,12 +15,22 @@
             <h1 id="jumbotrontext">Helpdesk Applicatie</h1>
             <div>
                 <ul class="nav nav-pills">
-                    <li role="presentation" class="active"><a href="#">Home</a></li>
-                    <li role="presentation"><a href="helpdesk.html">Helpdesk</a></li>
+                    <li role="presentation"><a href="index.html">Home</a></li>
+                    <li role="presentation" class="active"><a href="#">Helpdesk</a></li>
                 </ul>
             </div>
         </div>
-
     </div>
+
+    <div class="col-lg-12">
+        <h1>Klant: <span id="naam"></span> </h1><br>
+        <p>Klant belt op: <span id="datum"></span></p>
+    </div>
+<script>
+    var naam = prompt("Wat is de naam van de klant?");
+    document.getElementById("naam").innerHTML = naam;
+    var datum = prompt("Wat is de datum van vandaag?");
+    document.getElementById("datum").innerHTML = datum;
+</script>
 </body>
 </html>
