@@ -26,7 +26,12 @@
         <div id="klantinf">
         <h1>Klant: <span id="naam"></span> </h1><br>
         <p>Klant belt op: <span id="datum"></span></p><br>
-        <p>Modem van klant: <span id="modem"></span></p>
+        <p>Modem van klant: <span id="modem"></span></p><br>
+        <fieldset>
+            <legend>Internet</legend>
+            <label id="klacht3"><span id="klacht2" ></span></label>
+            <label id="nunl3"><span id="nunl2"></span></label>
+        </fieldset>
         </div>
     </div>
 
@@ -39,10 +44,20 @@
     document.getElementById("modem").innerHTML = modem;
     var klacht = confirm("Heeft u een klacht over ons product Internet?");
     if (klacht == true) {
-        window.location.href = "helpdesk2.html";
+        klacht2 = "Klant meldt een probleem met internet";
     } else {
-        x = "You pressed Cancel!";
+        klacht3 = "You pressed Cancel!";
     }
+    document.getElementById("klacht2").innerHTML = klacht2;
+    document.getElementById("klacht3").innerHTML = klacht3;
+    var nunl = confirm("Kunt u browsen naar www.nu.nl");
+    if (klacht == true) {
+        nunl2 = "Browsen naar nu.nl lukt";
+    } else {
+        nunl3 = "Browsen naar nu.nl lukt niet";
+    }
+    document.getElementById("nunl2").innerHTML = nunl2;
+    document.getElementById("nunl3").innerHTML = nunl3;
 </script>
 </body>
 </html>
