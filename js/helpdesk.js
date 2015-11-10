@@ -6,12 +6,13 @@ addEventListener("click", helpdesk);
 
 function helpdesk(){
 
-document.getElementById("naam").innerHTML = naam;
-var naam = prompt("Wat is de naam van de klant?");
+var naam;
+prompt("Wat is de naam van de klant?");
+document.write("<h1>Klant: </h1>" + naam)
+prompt("Wat is de datum van vandaag?");
 document.getElementById("datum").innerHTML = datum;
-var datum = prompt("Wat is de datum van vandaag?");
+prompt("Wat is de modem van de klant?");
 document.getElementById("modem").innerHTML = modem;
-var modem = prompt("Wat is de modem van de klant?");
 var klacht = confirm("Heeft u een klacht over ons product Internet?");
 if (klacht == true) {
     klacht2 = "Klant meldt een probleem met internet";
@@ -28,4 +29,4 @@ if (klacht == true) {
 }
 document.getElementById("nunl2").innerHTML = nunl2;
 document.getElementById("nunl3").innerHTML = nunl3;
-};
+}

@@ -9,7 +9,7 @@
     <script src="js/helpdesk.js"></script>
     <title>Helpdesk Applicatie</title>
 </head>
-<body onload="helpdesk()">
+<body>
     <div class="col-lg-12">
         <div class="jumbotron">
             <h1 id="jumbotrontext">Helpdesk Applicatie</h1>
@@ -23,17 +23,33 @@
     </div>
 
     <div class="col-lg-12">
-        <div id="klantinf">
-        <center><button class="btn btn-primary" onclick="helpdesk()" >Start programma</button></center>
-        <h1>Klant: <span id="naam"></span> </h1><br>
-        <p>Klant belt op: <span id="datum"></span></p><br>
-        <p>Modem van klant: <span id="modem"></span></p><br>
-        <fieldset>
-            <legend>Internet</legend>
-            <label id="klacht3"><span id="klacht2" ></span></label>
-            <label id="nunl3"><span id="nunl2"></span></label>
-        </fieldset>
-        </div>
+        <script>
+            var naam = prompt("Wat is de naam van de klant?");
+            document.writeln("<h1>Klant: " +  naam + "</h1>");
+
+            var datum = prompt("Wat is de datum van vandaag?");
+            document.writeln("<p>Datum: " + datum + "</p><br>");
+
+            var modem = prompt("Wat is de modem van de klant?");
+            document.writeln("<p>Modem: " + modem + "</p><br>");
+
+            var klacht = confirm("Heeft u een klacht over ons product Internet?");
+            if (klacht == true) {
+                document.write("Klant meldt een probleem met internet<br>");
+            } else {
+                klacht3 = "You pressed Cancel!";
+            }
+            document.getElementById("klacht2").innerHTML = klacht2;
+            document.getElementById("klacht3").innerHTML = klacht3;
+            var nunl = confirm("Kunt u browsen naar www.nu.nl");
+            if (klacht == true) {
+                nunl2 = "Browsen naar nu.nl lukt";
+            } else {
+                nunl3 = "Browsen naar nu.nl lukt niet";
+            }
+            document.getElementById("nunl2").innerHTML = nunl2;
+            document.getElementById("nunl3").innerHTML = nunl3;
+        </script>
     </div>
 
 </body>
