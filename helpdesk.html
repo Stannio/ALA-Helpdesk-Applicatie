@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/helpdesk.js"></script>
     <title>Helpdesk Applicatie</title>
 </head>
 <body>
@@ -22,35 +21,41 @@
         </div>
     </div>
 
-    <div class="col-lg-12">
-        <script>
+    <div class="col-lg-6">
+        <div id="klant_inf">
+        <script type="text/javascript">
             var naam = prompt("Wat is de naam van de klant?");
-            document.writeln("<h1>Klant: " +  naam + "</h1>");
+                document.writeln("<h1>Klant: " +  naam + "</h1><hr>");
 
             var datum = prompt("Wat is de datum van vandaag?");
-            document.writeln("<p>Datum: " + datum + "</p><br>");
+                document.writeln("<p>Datum: " + datum + "</p><hr>");
 
             var modem = prompt("Wat is de modem van de klant?");
-            document.writeln("<p>Modem: " + modem + "</p><br>");
+                document.writeln("<p>Modem: " + modem + "</p><hr>");
 
             var klacht = confirm("Heeft u een klacht over ons product Internet?");
-            if (klacht == true) {
-                document.write("Klant meldt een probleem met internet<br>");
-            } else {
-                klacht3 = "You pressed Cancel!";
+                if (klacht == true) {
+                    document.write("<p>Klant meldt een probleem met internet</p><hr>");
+            }   else {
+                    document.writeln("You pressed Cancel!");
             }
-            document.getElementById("klacht2").innerHTML = klacht2;
-            document.getElementById("klacht3").innerHTML = klacht3;
-            var nunl = confirm("Kunt u browsen naar www.nu.nl");
-            if (klacht == true) {
-                nunl2 = "Browsen naar nu.nl lukt";
-            } else {
-                nunl3 = "Browsen naar nu.nl lukt niet";
-            }
-            document.getElementById("nunl2").innerHTML = nunl2;
-            document.getElementById("nunl3").innerHTML = nunl3;
-        </script>
-    </div>
 
+            var nu_nl = confirm("Kunt u browsen naar www.nu.nl");
+                if (nu_nl == true) {
+                    document.writeln("<p>Browsen naar nu.nl lukt</p><hr>");
+            }   else {
+                    document.writeln("<p>Browsen naar nu.nl lukt niet</p><hr>");
+            }
+
+            var nu_nl_reload = confirm("Reageert de pagina snel na het indrukken van F5");
+                if (nu_nl_reload == true) {
+                    document.writeln("<p>De pagina reageert snel als F5 wordt ingedrukt</p><hr>");
+            }   else {
+                    document.writeln("<p>De pagina reageert niet of langzaam als F5 ingedrukt wordt</p><hr>");
+            }
+
+        </script>
+        </div>
+    </div>
 </body>
 </html>
