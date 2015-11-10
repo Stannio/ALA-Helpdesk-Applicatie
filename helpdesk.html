@@ -6,56 +6,75 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
     <title>Helpdesk Applicatie</title>
 </head>
 <body>
     <div class="col-lg-12">
         <div class="jumbotron">
-            <h1 id="jumbotrontext">Helpdesk Applicatie</h1>
+            <h1 id="jumbotrontext"><i class="fa fa-phone"></i> Helpdesk Applicatie</h1>
             <div>
                 <ul class="nav nav-pills">
-                    <li role="presentation"><a href="index.html">Home</a></li>
-                    <li role="presentation" class="active"><a href="#">Helpdesk</a></li>
+                    <li role="presentation"><a href="index.html">Home <i class="fa fa-home"></i></a></li>
+                    <li role="presentation" class="active"><a href="#">Helpdesk <i class="fa fa-info-circle"></i></a></li>
                 </ul>
             </div>
         </div>
     </div>
 
     <div class="col-lg-6">
+        <center><button onclick="helpdesk()" class="btn btn-primary" style="margin-bottom:10px;">Start programma</button></center>
         <div id="klant_inf">
-        <script type="text/javascript">
-            var naam = prompt("Wat is de naam van de klant?");
-                document.writeln("<h1>Klant: " +  naam + "</h1><hr>");
-
-            var datum = prompt("Wat is de datum van vandaag?");
-                document.writeln("<p>Datum: " + datum + "</p><hr>");
-
-            var modem = prompt("Wat is de modem van de klant?");
-                document.writeln("<p>Modem: " + modem + "</p><hr>");
-
-            var klacht = confirm("Heeft u een klacht over ons product Internet?");
-                if (klacht == true) {
-                    document.write("<p>Klant meldt een probleem met internet</p><hr>");
-            }   else {
-                    document.writeln("You pressed Cancel!");
-            }
-
-            var nu_nl = confirm("Kunt u browsen naar www.nu.nl");
-                if (nu_nl == true) {
-                    document.writeln("<p>Browsen naar nu.nl lukt</p><hr>");
-            }   else {
-                    document.writeln("<p>Browsen naar nu.nl lukt niet</p><hr>");
-            }
-
-            var nu_nl_reload = confirm("Reageert de pagina snel na het indrukken van F5");
-                if (nu_nl_reload == true) {
-                    document.writeln("<p>De pagina reageert snel als F5 wordt ingedrukt</p><hr>");
-            }   else {
-                    document.writeln("<p>De pagina reageert niet of langzaam als F5 ingedrukt wordt</p><hr>");
-            }
-
-        </script>
+            <h1 style="text-align: center; font-weight: bold;">INTERNET</h1>
+                <h1>Klantnaam: <span id="naam"></span></h1><br>
+                <p>Datum: <span id="datum"></span></p><br>
+                <p>Modem: <span id="modem"></span></p><hr>
+                <p id="klacht"></p><br>
+                <p id="nu_nl"></p><br>
+                <p id="nu_nl_reload"></p><br>
         </div>
+
     </div>
+    <div class="col-lg-12">
+        <footer class="panel-footer">
+            <p>&copy; 2015 Stan de Horn</p>
+        </footer>
+    </div>
+    <script>
+        function helpdesk(){
+
+            var naam = prompt("Wat is de naam van de klant?");
+            document.getElementById("naam").innerHTML = naam + "<i class='fa fa-check'> </i>";
+            var datum = prompt("Wat is de datum van vandaag?");
+            document.getElementById("datum").innerHTML = datum + "<i class='fa fa-check'> </i>";
+            var modem = prompt("Wat is de modem van de klant?");
+            document.getElementById("modem").innerHTML = modem + "<i class='fa fa-check'> </i>";
+
+             var klacht = confirm("Heeft u een klacht over ons product Internet?");
+             if (klacht == true) {
+             klacht = "<i class='fa fa-warning'></i> Klant meldt een probleem met internet";
+             }   else {
+             klacht = "<i class='fa fa-check'> </i> Klant meld geen probleem met internet";
+             window.location = "helpdesk2.html";
+             }
+             document.getElementById("klacht").innerHTML = klacht;
+
+             var nu_nl = confirm("Kunt u browsen naar www.nu.nl");
+             if (nu_nl == true) {
+             nu_nl = "<i class='fa fa-check'> </i>Browsen naar nu.nl lukt";
+             }   else {
+             nu_nl = "<i class='fa fa-warning'> </i> Browsen naar nu.nl lukt niet";
+             }
+             document.getElementById("nu_nl").innerHTML = nu_nl;
+
+             var nu_nl_reload = confirm("Reageert de pagina snel na het indrukken van F5");
+             if (nu_nl_reload == true) {
+             nu_nl_reload = "<i class='fa fa-check'> </i>De pagina reageert snel als F5 wordt ingedrukt";
+             }   else {
+             nu_nl_reload = "<i class='fa fa-warning'> </i> De pagina reageert niet of langzaam als F5 ingedrukt wordt";
+             }
+             document.getElementById("nu_nl_reload").innerHTML = nu_nl_reload;
+        }
+    </script>
 </body>
 </html>

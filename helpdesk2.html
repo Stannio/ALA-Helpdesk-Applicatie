@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Stan de Horn">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <title>Helpdesk Applicatie</title>
+</head>
+<body>
+<div class="col-lg-12">
+    <div class="jumbotron">
+        <h1 id="jumbotrontext">Helpdesk Applicatie</h1>
+        <div>
+            <ul class="nav nav-pills">
+                <li role="presentation"><a href="index.html">Home <i class="fa fa-home"></i></a></li>
+                <li role="presentation" class="active"><a href="helpdesk.html">Helpdesk <i class="fa fa-info-circle"></i></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-6">
+    <div id="klant_inf">
+        <h1 style="text-align: center; font-weight: bold;">INTERNET</h1>
+        <script type="text/javascript">
+            var naam = prompt("Wat is de naam van de klant?");
+            document.writeln("<h1>Klant: " +  naam + "</h1><br>");
+
+            var datum = prompt("Wat is de datum van vandaag?");
+            document.writeln("<p><i class='fa fa-check'> </i> Datum: " + datum + "</p><br>");
+
+            var modem = prompt("Wat is de modem van de klant?");
+            document.writeln("<p><i class='fa fa-check'> </i> Modem: " + modem + "</p><hr>");
+
+            var klacht = confirm("Heeft u een klacht over ons product Internet?");
+            if (klacht == true) {
+                document.write("<p><i class='fa fa-warning'></i> Klant meldt een probleem met internet</p><br>");
+            }   else {
+                window.location = "helpdesk2.html";
+            }
+
+            var nu_nl = confirm("Kunt u browsen naar www.nu.nl");
+            if (nu_nl == true) {
+                document.writeln("<p><i class='fa fa-check'> </i>Browsen naar nu.nl lukt</p><br>");
+            }   else {
+                document.writeln("<p><i class='fa fa-warning'> </i> Browsen naar nu.nl lukt niet</p><br>");
+            }
+
+            var nu_nl_reload = confirm("Reageert de pagina snel na het indrukken van F5");
+            if (nu_nl_reload == true) {
+                document.writeln("<p><i class='fa fa-check'> </i>De pagina reageert snel als F5 wordt ingedrukt</p><br>");
+            }   else {
+                document.writeln("<p><i class='fa fa-warning'> </i> De pagina reageert niet of langzaam als F5 ingedrukt wordt</p><br>");
+            }
+
+        </script>
+    </div>
+
+</div>
+<div class="col-lg-12">
+    <footer class="panel-footer">
+        <p>&copy; 2015 Stan de Horn</p>
+    </footer>
+</div>
+</body>
+</html>

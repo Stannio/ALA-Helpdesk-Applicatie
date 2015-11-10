@@ -27,8 +27,9 @@ a{
 }
 #klant_inf{
     color: whitesmoke;
-    border: solid 3px #27ae60;
+    border: solid 3px #7f8c8d;
     margin-left:10px;
+    border-radius: 5px;
 }
 #index_img{
     clear:both;
@@ -43,8 +44,23 @@ a{
     font-size:1.4em;
     clear:both;
     float:left;
+    color:whitesmoke;
 }
 hr{
-    background-color: #27ae60;
+    background-color: #7f8c8d;
     height: 3px;
+    margin: 10px;
+}
+.fa-check{
+    color: #27ae60;
+}
+.fa-warning{
+    color: #e74c3c;
+}
+.panel-footer{
+    background-color: rgba(52, 73, 94, 0.7);
+    color:whitesmoke;
+    text-align:center;
+    margin-top:4.5%;
+
 }
