@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="">
+    <script src="js/konami.js"></script>
     <title>Helpdesk Applicatie</title>
 </head>
 <body>
@@ -22,15 +23,34 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-3">
         <p>Dit is de Helpdesk van het IDCollege Zoetmeer AO/MD. <br>
            Als je problemen het met Internet of andere technische dingen zit je hier goed. <br>
 
         </p>
 
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-3">
         <img id="index_img" src="css/images/index_img.png">
     </div>
+
+    <div class="col-lg-12">
+        <footer class="footer" style="margin-top: 25%;">
+            <p>&copy; 2015 Stan de Horn</p>
+        </footer>
+    </div>
+
+    <script>
+        var easter_egg = new Konami();
+        easter_egg.code = function() {
+            confirm('Je hebt de konami code ingevoerd?' + ' Are u a wizard?' + "Or are u a xXxmlg360noscoper420XxXblazeitxXxgetrektxXxXx?");
+            if (easter_egg == true) {
+                window.location = 'easter-egg.html';
+            }   else {
+                window.location = 'easter-egg.html';
+            }
+        };
+        easter_egg.load();
+    </script>
 </body>
 </html>
